@@ -1,8 +1,17 @@
 package com.hmc.model;
 
-public class Person {
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+public class Person {
+	
+	@NotNull
+	@Size(min=4, max= 8)
 	private String name;
+	
+	@NotNull
+	@Min(18)
 	private int age;
 
 	public String getName() {
@@ -29,5 +38,11 @@ public class Person {
 	public Person(){
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	
 
 }

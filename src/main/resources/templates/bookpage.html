@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+			<thead>
+					<tr>
+						
+						<th>Title</th>
+						<th>Author</th>
+						<th>Price</th>
+					
+					
+					
+					</tr>
+					
+			</thead>
+			<tbody>
+				<tr th:each="book : ${books}">
+							<th><span th:text="${book.title}"></span> </th>
+							<th><span th:text="${book.author}"></span> </th>
+							<th><span th:text="${book.price}"></span> </th>	
+							
+					</tr>
+					
+			</tbody>
+	
+	</table>
+	
+	<form action="#" th:action="@{/books/addBook}" th:object="${book}" method="post">
+		<p>title: <input type="text" th:field="*{title}" /></p>
+		<p>author: <input type="text" th:field="*{author}" /></p>
+		<p>price: <input type="text" th:field="*{price}" /></p>
+		<p><input type="submit" value="Submit" /></p>
+	</form>
+
+</body>
+</html>

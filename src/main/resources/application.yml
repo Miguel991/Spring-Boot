@@ -1,24 +1,14 @@
-#Spring Properties
 spring:
-  aop:
-    auto: true
-    proxy-target-class: false
-    
-  messages:
-    basename: messages
-    always-use-message-format: false
-    cache-seconds: -1
-  mvc:
-    dispatch-options-request: true
-    dispatch-trace-request: false
-  couchbase:
-    bucket:
-      name: default
-#Security Properties
-security:
-  oauth2:
-    resource:
-      service-id: resource
-      prefer-token-info: true
-      
-    
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookstore
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
